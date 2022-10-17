@@ -1,3 +1,3 @@
 FROM nginx
 
-COPY birds /usr/share/nginx/html
+COPY lab /usr/share/nginx/html
