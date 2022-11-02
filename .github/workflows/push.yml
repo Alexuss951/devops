@@ -1,8 +1,14 @@
+# This is a basic workflow to buid Docker image and deploy it to AKS cluster
+
+
+# Indicates when the workflow is triggered
 on:
   push:
     branches:
       - 'master'
-
+      
+      
+# List of jobs/actions the workflow is going to do
 jobs:
   build:
     runs-on: ubuntu-latest
