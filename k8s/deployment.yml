@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: githubactions-aks-demo
+  name: githubactions-aks
 spec:
   selector:
     matchLabels:
-      app: githubactions-aks-demo
+      app: githubactions-aks
   template:
     metadata:
       labels:
-        app: githubactions-aks-demo
+        app: githubactions-aks
     spec:
       containers:
-      - name: githubactions-aks-demo
+      - name: githubactions-aks
         image: sander987ru/nginx-github-actions:lab
         resources:
           limits:
