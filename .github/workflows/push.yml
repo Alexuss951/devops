@@ -8,7 +8,7 @@ on:
       - 'master'
 
 # Set ENVIRONMENT variables
-ENV:
+env:
  rg_name: aks-tf
  aks_cluster_name: aks-cluster-tf
 
