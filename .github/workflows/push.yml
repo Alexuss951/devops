@@ -6,11 +6,16 @@ on:
   push:
     branches:
       - 'master'
-      
+
+# Set ENVIRONMENT variables
+ENV:
+ rg_name: aks-tf
+ aks_cluster_name: aks-cluster-tf
+
       
 # List of jobs/actions the workflow is going to do
 jobs:
-  build:
+  build&deploy:
     runs-on: ubuntu-latest
 
 
@@ -44,10 +49,10 @@ jobs:
             creds: '${{secrets.AZURE_CREDENTIALS}}'
             # Resource Group Name
             #resource-group: AKSRG
-            resource-group: aks-tf
+            resource-group: $rg_name
             # AKS Cluster Name
             #cluster-name: myclusteraks
-            cluster-name: aks-cluster-tf
+            cluster-name: $aks_cluster_name
             
        # Deploy to k8s cluster
       - name: Deploy to Kubernetes cluster
