@@ -49,10 +49,10 @@ jobs:
             creds: '${{secrets.AZURE_CREDENTIALS}}'
             # Resource Group Name
             #resource-group: AKSRG
-            resource-group: $rg_name
+            resource-group: ${{ env.rg_name }}
             # AKS Cluster Name
             #cluster-name: myclusteraks
-            cluster-name: $aks_cluster_name
+            cluster-name: ${{ env.aks_cluster_name }}
             
        # Deploy to k8s cluster
       - name: Deploy to Kubernetes cluster
