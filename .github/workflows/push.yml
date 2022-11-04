@@ -43,9 +43,11 @@ jobs:
             # Azure credentials i.e. output of `az ad sp create-for-rbac --sdk-auth`
             creds: '${{secrets.AZURE_CREDENTIALS}}'
             # Resource Group Name
-            resource-group: AKSRG
+            #resource-group: AKSRG
+            resource-group: aks-tf
             # AKS Cluster Name
-            cluster-name: myclusteraks
+            #cluster-name: myclusteraks
+            cluster-name: aks-cluster-tf
             
        # Deploy to k8s cluster
       - name: Deploy to Kubernetes cluster
