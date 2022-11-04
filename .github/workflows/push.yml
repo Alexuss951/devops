@@ -15,7 +15,7 @@ env:
       
 # List of jobs/actions the workflow is going to do
 jobs:
-  build&deploy:
+  build-deploy:
     runs-on: ubuntu-latest
 
 
