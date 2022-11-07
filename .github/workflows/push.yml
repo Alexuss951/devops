@@ -9,7 +9,7 @@ on:
 
 # Set ENVIRONMENT variables
 env:
- rg_name: aks-tf2
+ rg_name: aks-tf
  aks_cluster_name: aks-cluster-tf
 
       
