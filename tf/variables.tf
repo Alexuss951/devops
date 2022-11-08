@@ -1,7 +1,7 @@
 variable "location" {
   type        = string
   description = "Azure Region where  resources will be provisioned"
-  default     = "West Europe"
+  default     = "East US"
 }
 
 
