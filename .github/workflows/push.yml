@@ -42,7 +42,7 @@ jobs:
           context: .
           file: ./docker/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/nginx-github-actions:birds
+          tags: ${{ secrets.DOCKER_USERNAME }}/nginx-github-actions:lab
           
           
         # Set AKS context to connect  
