@@ -32,3 +32,8 @@ variable "node_pool_size" {
   default     = "standard_B2s"
 }
 
+variable "db-server-name" {
+  type        = string
+  description = "MSSQL server name"
+  default = "db-server1"
+}
