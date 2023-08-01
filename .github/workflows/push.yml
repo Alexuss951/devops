@@ -42,7 +42,7 @@ jobs:
           context: .
           file: ./docker/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/nginx-github-actions:lab
+          tags: ${{ secrets.DOCKER_USERNAME }}/nginx-github-actions:birds
           
         # Set AKS context to connect  
       -  name: Azure Kubernetes set context
