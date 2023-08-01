@@ -1,4 +1,4 @@
 FROM nginx
 
 
-COPY lab /usr/share/nginx/html
+COPY birds /usr/share/nginx/html
