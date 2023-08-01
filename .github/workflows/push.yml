@@ -6,6 +6,10 @@ on:
   push:
     branches:
       - 'master'
+    paths:
+      - 'docker/**' # Trigger the workflow only if changes are made in the docker/ directory or its subdirectories
+
+
 
 # Set ENVIRONMENT variables
 env:
