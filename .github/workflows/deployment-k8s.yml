@@ -1,0 +1,88 @@
+# This is a basic workflow to buid Docker image and deploy it to AKS cluster
+
+
+# Indicates when the workflow is triggered
+on:
+  push:
+    branches:
+      - 'master'
+    paths:
+      - 'k8s/**' # Trigger the workflow only if changes are made in the k8s/ directory or its subdirectories
+
+
+# Set ENVIRONMENT variables
+env:
+ rg_name: aks-tf
+ aks_cluster_name: aks-cluster-tf
+
+      
+# List of jobs/actions the workflow is going to do
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+
+    steps:
+      - name: Checkout 
+        uses: actions/checkout@v3
+      
+          
+        # Set AKS context to connect  
+      -  name: Azure Kubernetes set context
+         uses: Azure/aks-set-context@v1
+         with:
+            # Azure credentials i.e. output of `az ad sp create-for-rbac --sdk-auth`
+            creds: '${{secrets.AZURE_CREDENTIALS}}'
+            # Resource Group Name
+            #resource-group: AKSRG
+            resource-group: ${{ env.rg_name }}
+            # AKS Cluster Name
+            #cluster-name: myclusteraks
+            cluster-name: ${{ env.aks_cluster_name }}
+            
+       # Deploy to k8s cluster
+      - name: Deploy to Kubernetes cluster
+        uses: Azure/k8s-deploy@v1
+        with:        
+          # Path to the manifest files which will be used for deployment.
+          manifests: |
+            k8s/deployment.yml
+            k8s/service.yml
+          action: deploy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
