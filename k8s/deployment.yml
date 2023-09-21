@@ -13,8 +13,14 @@ spec:
         app: githubactions-aks
     spec:
       containers:
-      - name: githubactions-aks
+      - name: githubactions-aks-lab
         image: sander987ru/nginx-github-actions:lab
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+      - name: githubactions-aks-bird
+        image: sander987ru/nginx-github-actions:birds
         resources:
           limits:
             memory: "256Mi"
