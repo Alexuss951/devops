@@ -14,13 +14,13 @@ spec:
     spec:
       containers:
       - name: githubactions-aks-lab
-        image: sander987ru/nginx-github-actions:lab
+        image: sander987ru/nginx-github-actions:lab #Pod for Lab web
         resources:
           limits:
             memory: "256Mi"
             cpu: "500m"
       - name: githubactions-aks-bird
-        image: sander987ru/nginx-github-actions:birds
+        image: sander987ru/nginx-github-actions:birds  #Pod for birds web
         resources:
           limits:
             memory: "256Mi"
