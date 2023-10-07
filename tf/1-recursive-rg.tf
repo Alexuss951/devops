@@ -12,5 +12,5 @@ resource "azurerm_resource_group" "rgs" {
   count = var.num_resource_groups
 
   name     = "rg${count.index + 1}"  # Genera nombres como rg1, rg2, rg3, ...
-  location = "eastus"  # Puedes cambiar la ubicación si es necesario
+  location = "eastus"  # Ubicación recursos
 }
