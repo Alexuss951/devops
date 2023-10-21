@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: githubactions-aks
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: githubactions-aks
