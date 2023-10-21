@@ -1,4 +1,4 @@
 FROM nginx
 
-#Añadimos codigo app
+#Copiar fichero app
 COPY lab /usr/share/nginx/html
