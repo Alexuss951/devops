@@ -29,8 +29,14 @@ jobs:
 
     steps:
       - name: Checkout 
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
+
+      # Extract the last part of the path after "webs/"
+      - name: Extract tag from Dockerfile path
+        run: |
+          DOCKERFILE_PATH=$(awk '/COPY/ {print $3}' Dockerfile | awk -F'/' '{print $2}' | xargs basename)
+          echo "DOCKERFILE_PATH=$DOCKERFILE_PATH" >> $GITHUB_ENV
 
       # Login to DockerHub
       - name: Login to Docker Hub
@@ -49,7 +55,7 @@ jobs:
           context: .
           file: ./docker/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/nginx-github-actions:lab
+          tags: ${{ secrets.DOCKER_USERNAME }}/nginx-github-actions:${{ env.DOCKERFILE_PATH }}
 
 
         # Set AKS context to connect  
