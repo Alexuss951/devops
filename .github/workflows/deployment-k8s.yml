@@ -40,7 +40,7 @@ jobs:
            subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
     
       -  name: Azure Kubernetes set context
-         uses: Azure/aks-set-context@v3
+         uses: Azure/aks-set-context@v3.2
          with:
             # Azure credentials i.e. output of `az ad sp create-for-rbac --sdk-auth`
            # creds: ${{ secrets.AZURE_CREDENTIALS }}
