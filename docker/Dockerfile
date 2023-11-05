@@ -1,4 +1,4 @@
 FROM nginx
 
-#Copiar fichero app
+#Copiar  webapp > nginx www folder
 COPY webs/lab /usr/share/nginx/html
