@@ -25,14 +25,19 @@ jobs:
     steps:
       - name: Checkout 
         uses: actions/checkout@v3
-      
+
+      - name: Azure Login
+        uses: Azure/login@v1.4.6
+        with:
+          # Paste output of `az ad sp create-for-rbac` as value of secret variable: AZURE_CREDENTIALS
+          creds: # '${{secrets.AZURE_CREDENTIALS}}'
           
         # Set AKS context to connect  
       -  name: Azure Kubernetes set context
          uses: Azure/aks-set-context@v3
          with:
             # Azure credentials i.e. output of `az ad sp create-for-rbac --sdk-auth`
-            creds: '${{secrets.AZURE_CREDENTIALS}}'
+            #creds: '${{secrets.AZURE_CREDENTIALS}}'
             # Resource Group Name
             resource-group: ${{ env.rg_name }}
             # AKS Cluster Name
