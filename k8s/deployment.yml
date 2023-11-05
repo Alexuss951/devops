@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
       - name: githubactions-aks
-        image: sander987ru/nginx-github-actions:birds
+        #image: sander987ru/nginx-github-actions:birds
+        image: "${{ secrets.DOCKER_USERNAME }}/nginx-github-actions:${{ env.DOCKERFILE_PATH }}"
         resources:
           limits:
             memory: "256Mi"
