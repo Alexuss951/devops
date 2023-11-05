@@ -35,9 +35,10 @@ jobs:
       # Extract the last part of the path after "webs/"
       - name: Extract tag from Dockerfile path
         run: |
-          DOCKERFILE_PATH=$(awk '/COPY/ {print $3}' Dockerfile | awk -F'/' '{print $2}' | xargs basename)
+          DOCKERFILE_PATH=$(grep -oP '(?<=COPY webs/).*' docker/Dockerfile | cut -d' ' -f1 | xargs basename)
           echo "DOCKERFILE_PATH=$DOCKERFILE_PATH" >> $GITHUB_ENV
 
+          
       # Login to DockerHub
       - name: Login to Docker Hub
         uses: docker/login-action@v3
