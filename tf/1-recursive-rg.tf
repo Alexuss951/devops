@@ -1,7 +1,7 @@
 # # Variable que indica la cantidad de grupos de recursos que deseas crear
 # variable "num_resource_groups" {
 #   type    = number
-#   default = 1  # Puedes cambiar este valor al número deseado
+#   default = 10  # Puedes cambiar este valor al número deseado
 # }
 
 
