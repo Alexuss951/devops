@@ -1,0 +1,1 @@
+WP deployments with GitOps
